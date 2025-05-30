@@ -1,0 +1,298 @@
+/* src/css/about-us.css */
+
+/* Override body untuk halaman About Us agar tidak flex dari style.css */
+body {
+    display: block;
+    overflow-y: auto;
+    height: auto;
+    background-color: #F8F9FA; /* Background abu-abu muda */
+}
+
+.container {
+    max-width: 1200px; /* Batasi lebar konten agar tidak terlalu melebar */
+    margin: 0 auto; /* Pusatkan container */
+    padding: 0 5%; /* Padding samping */
+}
+
+/* --- About Hero Section --- */
+.about-hero-section {
+    background-color: #3F7D58; /* Warna hijau gelap */
+    color: white;
+    padding: 80px 5%; /* Padding besar untuk hero */
+    text-align: center;
+    border-radius: 45px;
+    margin: 20px 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 350px;
+}
+
+.about-hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.about-hero-section p {
+    font-size: 1.3rem;
+    color: #D9E5DE;
+    max-width: 700px;
+    line-height: 1.5;
+}
+
+/* --- Our Story Section --- */
+.our-story-section {
+    background-color: #FFFFFF;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.our-story-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3F7D58;
+    margin-bottom: 60px;
+}
+
+.story-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap; /* Izinkan wrap pada layar kecil */
+    text-align: left;
+}
+
+.story-image img {
+    max-width: 450px; /* Ukuran gambar cerita */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.story-text {
+    max-width: 600px;
+}
+
+.story-text h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.story-text p {
+    font-size: 1.1rem;
+    color: #555555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* --- Our Mission & Vision Section --- */
+.our-mission-vision-section {
+    background-color: #F8F9FA;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.mission-vision-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.mission-card,
+.vision-card {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    max-width: 450px;
+    text-align: left;
+}
+
+.mission-card h3,
+.vision-card h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #3F7D58;
+    margin-bottom: 15px;
+}
+
+.mission-card p,
+.vision-card p {
+    font-size: 1rem;
+    color: #555555;
+    line-height: 1.6;
+}
+
+/* --- Our Team Section --- */
+.our-team-section {
+    background-color: #FFFFFF;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.our-team-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3F7D58;
+    margin-bottom: 60px;
+}
+
+.team-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    background-color: #F8F9FA;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    max-width: 250px;
+    text-align: center;
+}
+
+.team-member img {
+    width: 150px; /* Ukuran gambar tim */
+    height: 150px;
+    border-radius: 50%; /* Bentuk lingkaran */
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid #3F7D58; /* Border hijau pada gambar */
+}
+
+.team-member h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 5px;
+}
+
+.team-member p {
+    font-size: 0.95rem;
+    color: #555555;
+}
+
+/* --- Responsiveness --- */
+@media (max-width: 1024px) {
+    .about-hero-section h1 {
+        font-size: 2.8rem;
+    }
+    .about-hero-section p {
+        font-size: 1.1rem;
+    }
+    .story-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .story-image {
+        order: -1; /* Gambar di atas teks */
+    }
+    .story-text {
+        text-align: center;
+    }
+    .story-image img {
+        max-width: 100%;
+        width: 350px;
+    }
+    .mission-vision-grid {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .mission-card,
+    .vision-card {
+        max-width: 100%;
+        text-align: center;
+    }
+    .team-grid {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-hero-section {
+        padding: 60px 4%;
+        margin: 15px 4%;
+        min-height: 250px;
+    }
+    .about-hero-section h1 {
+        font-size: 2.2rem;
+    }
+    .about-hero-section p {
+        font-size: 1rem;
+    }
+    .our-story-section,
+    .our-mission-vision-section,
+    .our-team-section {
+        padding: 60px 0;
+    }
+    .our-story-section h2,
+    .our-team-section h2 {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+    .story-content {
+        gap: 20px;
+    }
+    .story-text h3 {
+        font-size: 1.8rem;
+    }
+    .story-text p {
+        font-size: 0.95rem;
+    }
+    .mission-card h3,
+    .vision-card h3 {
+        font-size: 1.5rem;
+    }
+    .team-member img {
+        width: 120px;
+        height: 120px;
+    }
+    .team-member h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-hero-section {
+        padding: 40px 3%;
+        margin: 10px 3%;
+    }
+    .about-hero-section h1 {
+        font-size: 1.8rem;
+    }
+    .about-hero-section p {
+        font-size: 0.9rem;
+    }
+    .our-story-section,
+    .our-mission-vision-section,
+    .our-team-section {
+        padding: 40px 0;
+    }
+    .our-story-section h2,
+    .our-team-section h2 {
+        font-size: 1.6rem;
+        margin-bottom: 30px;
+    }
+    .story-image img {
+        width: 100%;
+        max-width: 300px;
+    }
+    .story-text h3 {
+        font-size: 1.5rem;
+    }
+    .story-text p {
+        font-size: 0.9rem;
+    }
+    .team-member img {
+        width: 100px;
+        height: 100px;
+    }
+}

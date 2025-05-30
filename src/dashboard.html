@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroSentry - Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-left">
+            <div class="logo">
+                <img src="images/logo-agrosentry.png" alt="AgroSentry Logo">
+            </div>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="dashboard.html" class="active">HOME</a></li>
+                    <li><a href="pest-detection.html">PEST DETECTION</a></li>
+                    <li><a href="about-us.html">ABOUT US</a></li> <li><a href="#">HELP</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="navbar-right">
+            <div class="profile-actions">
+                <img src="images/user.png" alt="User Profile" class="profile-image-icon">
+                <img src="images/logout.png" alt="Logout" class="logout-image-icon">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Instant and Accurate <span class="hero-highlight">Pest Detection</span> for Your Plants</h1>
+                <p class="hero-description">AgroSentry leverages AI technology to help farmers easily identify pests through images</p>
+                <a href="#" class="btn-primary-hero">Go to Pest Detection</a>
+            </div>
+            <div class="hero-image">
+                <img src="images/plant1.png" alt="Plant for detection">
+            </div>
+        </section>
+
+        <section class="why-choose-section">
+            <h2>Why Choose Agrosentry?</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-camera icon"></i>
+                    <h3>Automatic Detection</h3>
+                    <p>Quickly identify pest types by simply uploading an image, no manual searching needed.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-brain icon"></i>
+                    <h3>Modern AI Technology</h3>
+                    <p>Powered by deep learning and computer vision for precise and reliable results.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-lightbulb icon"></i>
+                    <h3>Instant Suggestions</h3>
+                    <p>Receive direct advice on how to treat and prevent pests, helping your plants thrive.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works-section">
+            <h2>How It Works?</h2>
+            <div class="steps-grid">
+                <div class="step-item">
+                    <img src="images/computer.png" alt="Open website">
+                    <div class="step-number">01</div>
+                    <p>Open up website</p>
+                </div>
+                <div class="step-item">
+                    <img src="images/picture.png" alt="Upload image">
+                    <div class="step-number">02</div>
+                    <p>Upload plant image</p>
+                </div>
+                <div class="step-item">
+                    <img src="images/search.png" alt="Wait for analysis">
+                    <div class="step-number">03</div>
+                    <p>Wait for AI analysis</p>
+                </div>
+                <div class="step-item">
+                    <img src="images/file-upload.png" alt="See results">
+                    <div class="step-number">04</div>
+                    <p>See detection results & recommendations</p>
+                </div>
+                <div class="step-item">
+                    <img src="images/good-feedback.png" alt="Take action">
+                    <div class="step-number">05</div>
+                    <p>Take recommended action</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-us-section">
+            <h2>About Us</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="images/about-us.png" alt="Farmer" style="max-width: 100%; height: auto;">
+                </div>
+                <div class="about-text">
+                    <h3>Empowering Farmers with Smart Technology</h3>
+                    <p>We believe that the future of farming lies in precision and accessibility. This app revolutionizes agriculture and empowers farmers to make pest detection simple, fast, and accurate—just by uploading a photo. By combining machine learning with intuitive design, Agrosentry offers smart solutions for a thriving agricultural and more sustainable agriculture.</p>
+                    <button class="btn-read-more">Read More</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-column contact-us">
+                <h4>Contact Us</h4>
+                <p>info@agrosentry.com</p>
+            </div>
+            <div class="footer-column menu">
+                <h4>Menu</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Pest Detection</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Register</a></li>
+                </ul>
+            </div>
+            <div class="footer-column help">
+                <h4>Help</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">User Guide</a></li>
+                    <li><a href="#">Contact Support</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Agrosentry. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

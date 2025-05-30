@@ -1,0 +1,551 @@
+/* src/css/pest-detection.css */
+
+/* --- Gaya Khusus Navbar Halaman Pest Detection (Header) --- */
+.pest-detection-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.pest-detection-navbar .navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.pest-detection-navbar .navbar-left .logo img {
+    height: 40px;
+}
+
+.pest-detection-navbar .nav-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.pest-detection-navbar .nav-links a {
+    text-decoration: none;
+    color: #555555;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    padding: 5px 0;
+}
+
+.pest-detection-navbar .nav-links a:hover,
+.pest-detection-navbar .nav-links a.active {
+    color: #333333;
+    font-weight: 1000;
+}
+
+
+.pest-detection-navbar .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.pest-detection-navbar .history-icon,
+.pest-detection-navbar .profile-image-icon,
+.pest-detection-navbar .logout-image-icon {
+    height: 30px;
+    width: 30px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+.pest-detection-navbar .history-icon:hover,
+.pest-detection-navbar .profile-image-icon:hover,
+.pest-detection-navbar .logout-image-icon:hover {
+    transform: scale(1.05);
+}
+
+
+/* --- Gaya Hero Section Deteksi Hama (Konten Utama) --- */
+.pest-detection-hero {
+    background-color: #3F7D58; /* Background utama hero section */
+    color: white;
+    padding: 45px 5%;
+    text-align: center;
+    min-height: 400px;
+    border-radius: 45px;
+    margin: 20px 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Tambahkan ini untuk memposisikan ikon history secara absolut */
+}
+
+/* Wrapper untuk judul dan ikon history di hero section */
+.hero-title-wrapper {
+    display: flex;
+    align-items: center; /* Pusatkan secara vertikal */
+    justify-content: center; /* Pusatkan secara horizontal */
+    gap: 8px; /* Jarak antara judul dan ikon (lebih kecil sesuai gambar) */
+    margin-bottom: 80px; /* Tingkatkan jarak bawah untuk mendorong kotak ke bawah */
+    color: #FFFFFF; /* Warna teks judul yang lebih terang/kurang kontras */
+    /* Untuk memposisikan ikon history di ujung kanan */
+    width: 100%; /* Ambil lebar penuh parent */
+    max-width: 750px; /* Batasi lebar agar judul tidak terlalu melebar */
+    position: absolute; /* Posisikan secara absolut */
+    top: 50px; /* Atur posisi dari atas, sesuaikan jika perlu */
+    left: 50%; /* Mulai dari tengah */
+    transform: translateX(-50%); /* Geser ke kiri 50% dari lebarnya sendiri untuk pusatkan */
+    justify-content: space-between; /* Pisahkan judul dan ikon history */
+    padding: 0 40px; /* Tambahkan padding agar tidak terlalu mepet ujung */
+    box-sizing: border-box; /* Pastikan padding tidak menambah lebar */
+}
+
+.pest-detection-hero h1 {
+    font-size: 1.3rem; /* <--- UBAH INI: Ukuran font "Search any image with Agrosentry Lens" */
+    font-weight: 400; /* Tetap tipis sesuai gambar */
+    color: inherit;
+    line-height: 1.2;
+    margin: 0;
+    text-align: center; /* Pastikan teks tetap di tengah */
+    flex-grow: 1; /* Biarkan judul mengambil ruang yang tersedia */
+}
+
+.hero-history-icon {
+    width: 20px; /* <--- UBAH INI: Ukuran ikon history */
+    height: 20px; /* Pastikan proporsional */
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    flex-shrink: 0; /* Mencegah ikon menyusut */
+    margin-left: 10px; /* Tambahkan sedikit jarak dari judul jika perlu */
+}
+.hero-history-icon:hover {
+    transform: scale(1.05);
+}
+
+.pest-detection-hero p { /* Ini mungkin tidak digunakan jika hanya ada h1 dan upload area */
+    font-size: 1.1rem;
+    color: #D9E5DE;
+    margin-bottom: 40px;
+}
+
+.upload-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: calc(100% - 80px); /* Mengambil 100% lebar dikurangi padding horizontal hero */
+    max-width: 1700px; /* <--- UBAH INI: Lebar kotak hijau muda */
+    height: 450px; /* <--- UBAH INI: Tinggi kotak hijau muda */
+    margin: 0 auto;
+    background-color: #589A6F; /* Warna background kotak upload yang lebih gelap */
+    padding: 0; /* Hapus padding di sini, karena kontennya akan diatur oleh .upload-button-new */
+    border-radius: 10px;
+    box-sizing: border-box; /* Pastikan padding termasuk dalam lebar/tinggi */
+    display: flex;
+    justify-content: center; /* Pusatkan konten vertikal di dalamnya */
+    align-items: center; /* Pusatkan konten horizontal di dalamnya */
+    margin-top: 50px; /* Mengatasi jarak antara judul dan kotak jika posisinya absolut */
+}
+
+.upload-button-new {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    cursor: pointer;
+    transition: none;
+    width: auto;
+    height: auto;
+    color: white;
+    gap: 35px; /* Jarak yang lebih kecil antara ikon dan teks sesuai gambar */
+}
+
+.upload-button-new:hover {
+    background-color: transparent;
+}
+
+.upload-image-icon {
+    width:80px; /* <--- UBAH INI: Ukuran logo picture.png */
+    height: 80px; /* Pastikan proporsional */
+    object-fit: contain;
+    margin-bottom: 0;
+}
+
+.upload-text-link {
+    font-size: 1.1rem; /* <--- UBAH INI: Ukuran font "Upload image here" */
+    color: #90CAF9;
+    font-weight: 500;
+    text-decoration: underline;
+}
+.upload-text-link:hover {
+    color: #BBDEFB;
+}
+
+
+.image-preview {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    display: none;
+    background-color: white;
+}
+
+.image-preview img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.btn-primary-detection {
+    background-color: #FFFFFF;
+    color: #3F7D58;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 40px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 5px;
+}
+
+.btn-primary-detection:hover {
+    background-color: #E0E0E0;
+    color: #3F7D58;
+}
+
+/* --- Gaya Hasil Deteksi --- */
+.detection-results {
+    background-color: #FFFFFF;
+    padding: 60px 5%;
+    text-align: left;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin: 20px 5%;
+    border-radius: 10px;
+}
+
+.detection-results h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #3F7D58;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.result-box {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 30px;
+    background-color: #F8F9FA;
+}
+
+.result-box h3 {
+    font-size: 1.5rem;
+    color: #3F7D58;
+    margin-bottom: 15px;
+}
+
+.result-box p {
+    font-size: 1rem;
+    color: #555555;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.result-box h4 {
+    font-size: 1.2rem;
+    color: #333333;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* --- BAGIAN GRID FITUR DI HALAMAN PEST DETECTION --- */
+.pest-detection-features-showcase-section {
+    background-color: #F8F9FA;
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.features-showcase-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.feature-showcase-row {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    text-align: left;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.feature-showcase-row.reverse-layout {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+
+.feature-showcase-row .feature-image-col {
+    flex-shrink: 0;
+}
+
+.feature-showcase-row .feature-image-col img {
+    width: 280px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.feature-showcase-row .feature-text-col {
+    flex-grow: 1;
+    max-width: 500px;
+}
+
+.feature-showcase-row .feature-text-col h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 15px;
+}
+
+.feature-showcase-row .feature-text-col p {
+    font-size: 1.1rem;
+    color: #555555;
+    line-height: 1.6;
+}
+
+/* --- Utility classes (dibutuhkan oleh JS) --- */
+.hidden {
+    display: none !important;
+}
+
+/* --- Responsiveness --- */
+@media (max-width: 1024px) {
+    .pest-detection-navbar .nav-links {
+        display: none;
+    }
+
+    /* Penyesuaian hero-title-wrapper dan h1 di tablet */
+    .hero-title-wrapper {
+        flex-direction: row; /* Tetap horizontal di tablet */
+        justify-content: space-between; /* Pisahkan judul dan ikon */
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 50px;
+        padding: 0 20px; /* Sesuaikan padding agar tidak terlalu mepet */
+        position: static; /* Kembali ke posisi normal di dalam flex container parent */
+        transform: none; /* Hapus transform */
+    }
+    .pest-detection-hero h1 {
+        font-size: 1.4rem; /* Ukuran font di tablet */
+        text-align: left; /* Sesuaikan alignment */
+    }
+    .hero-history-icon {
+        width: 20px; /* Ukuran ikon di tablet */
+        height: 20px;
+    }
+
+    /* Penyesuaian upload-area di tablet */
+    .upload-area {
+        padding: 60px 30px;
+        max-width: 90%; /* Ambil lebih banyak lebar di tablet */
+        height: 250px; /* Sesuaikan tinggi di tablet */
+        margin-top: 0; /* Hapus margin-top yang ditambahkan untuk absolut positioning */
+    }
+    .upload-button-new {
+        flex-direction: row;
+        gap: 10px;
+        padding: 0;
+        height: auto;
+    }
+    .upload-image-icon {
+        width: 36px; /* Ukuran ikon di tablet */
+        height: 36px;
+    }
+    .upload-text-link {
+        font-size: 1.0rem;
+    }
+
+    .feature-showcase-row {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .feature-showcase-row .feature-image-col {
+        order: -1;
+    }
+    .feature-showcase-row .feature-text-col {
+        text-align: center;
+    }
+    .feature-showcase-row.reverse-layout {
+        flex-direction: column;
+        text-align: center;
+    }
+    .feature-showcase-row .feature-image-col img {
+        max-width: 100%;
+        width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .pest-detection-navbar {
+        padding: 10px 4%;
+    }
+    .pest-detection-navbar .logo img {
+        height: 35px;
+    }
+    .pest-detection-navbar .history-icon,
+    .pest-detection-navbar .profile-image-icon,
+    .pest-detection-navbar .logout-image-icon {
+        height: 25px;
+        width: 25px;
+    }
+
+    .pest-detection-hero {
+        padding: 30px 4%;
+        min-height: 280px; /* Sesuaikan tinggi minimum */
+        margin: 15px 4%;
+    }
+    .hero-title-wrapper {
+        margin-bottom: 30px; /* Sesuaikan margin bawah di mobile */
+        padding: 0 15px;
+    }
+    .pest-detection-hero h1 {
+        font-size: 1.2rem;
+    }
+    .hero-history-icon {
+        width: 16px;
+        height: 16px;
+    }
+    .upload-area {
+        padding: 40px 20px;
+        height: 200px; /* Sesuaikan tinggi di mobile */
+    }
+    .upload-button-new {
+        gap: 8px;
+    }
+    .upload-image-icon {
+        width: 32px; /* Ukuran ikon di mobile */
+        height: 32px;
+    }
+    .upload-text-link {
+        font-size: 0.9rem;
+    }
+    .btn-primary-detection {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .detection-results {
+        padding: 30px 4%;
+        margin: 15px 4%;
+    }
+    .detection-results h2 {
+        font-size: 1.6rem;
+    }
+    .result-box h3 {
+        font-size: 1.2rem;
+    }
+
+    .pest-detection-features-showcase-section {
+        padding: 30px 4%;
+    }
+    .features-showcase-grid {
+        gap: 30px;
+    }
+    .feature-showcase-row .feature-image-col img {
+        width: 180px;
+    }
+    .feature-showcase-row .feature-text-col h3 {
+        font-size: 1.4rem;
+    }
+    .feature-showcase-row .feature-text-col p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .pest-detection-navbar .logo img {
+        height: 30px;
+    }
+    .pest-detection-navbar .history-icon,
+    .pest-detection-navbar .profile-image-icon,
+    .pest-detection-navbar .logout-image-icon {
+        height: 20px;
+        width: 20px;
+    }
+
+    .pest-detection-hero {
+        padding: 25px 3%;
+        margin: 10px 3%;
+    }
+    .hero-title-wrapper {
+        gap: 5px;
+        margin-bottom: 20px; /* Sesuaikan margin bawah di layar sangat kecil */
+        padding: 0 10px;
+    }
+    .pest-detection-hero h1 {
+        font-size: 1.0rem;
+    }
+    .hero-history-icon {
+        width: 14px;
+        height: 14px;
+    }
+    .upload-area {
+        padding: 30px 15px;
+        height: 180px; /* Sesuaikan tinggi di layar sangat kecil */
+    }
+    .upload-button-new {
+        gap: 5px;
+    }
+    .upload-image-icon {
+        width: 28px;
+        height: 28px;
+    }
+    .upload-text-link {
+        font-size: 0.8rem;
+    }
+
+    .detection-results {
+        padding: 25px 3%;
+        margin: 10px 3%;
+    }
+    .detection-results h2 {
+        font-size: 1.4rem;
+    }
+    .result-box h3 {
+        font-size: 1.0rem;
+    }
+
+    .pest-detection-features-showcase-section {
+        padding: 25px 3%;
+    }
+    .features-showcase-grid {
+        gap: 25px;
+    }
+    .feature-showcase-row .feature-image-col img {
+        width: 120px;
+    }
+    .feature-showcase-row .feature-text-col h3 {
+        font-size: 1.2rem;
+    }
+    .feature-showcase-row .feature-text-col p {
+        font-size: 0.8rem;
+    }
+}

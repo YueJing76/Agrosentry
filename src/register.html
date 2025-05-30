@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+    <div class="left-panel">
+        </div>
+    <div class="right-panel">
+        <div class="form-wrapper">
+            <h2>Register</h2>
+            <form id="registerForm">
+                <div class="input-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" placeholder="full name" required>
+                </div>
+                <div class="input-group">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" placeholder="username@gmail.com" required>
+                </div>
+                <div class="input-group">
+                    <label for="registerPassword">Password</label>
+                    <div class="password-input-wrapper">
+                        <input type="password" id="registerPassword" placeholder="password" required>
+                        <i class="far fa-eye-slash toggle-password"></i>
+                    </div>
+                </div>
+                <button type="submit" class="btn-primary">Register</button>
+            </form>
+            <p class="bottom-text">Already have an account? <a href="login.html">Log In</a></p>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

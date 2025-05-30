@@ -1,0 +1,590 @@
+/* src/css/dashboard.css */
+
+/* Gaya untuk keseluruhan body pada halaman dashboard saja */
+body {
+    background-color: #F8F9FA; /* Latar belakang abu-abu muda */
+    color: #333333;
+    display: block; /* Penting: Override display:flex dari style.css jika ada */
+    overflow-y: auto; /* Izinkan scroll untuk halaman panjang */
+    height: auto; /* Izinkan tinggi menyesuaikan konten */
+    margin: 0; /* Pastikan tidak ada margin default */
+    padding: 0; /* Pastikan tidak ada padding default */
+}
+
+/* Header/Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Memisahkan navbar-left dan navbar-right */
+    align-items: center; /* Pusatkan secara vertikal semua item dalam navbar */
+    padding: 15px 5%; /* Padding samping, sesuai desain gambar */
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow ringan di bawah navbar */
+    position: sticky; /* Agar navbar tetap di atas saat scroll */
+    top: 0;
+    z-index: 1000; /* Pastikan navbar di atas elemen lain */
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center; /* Sejajarkan logo dan nav-links secara vertikal */
+    gap: 20px; /* Jarak antara logo dan menu navigasi */
+}
+
+.logo img {
+    height: 40px; /* Ukuran logo, sesuaikan jika perlu agar pas dengan gambar */
+    object-fit: contain; /* Pastikan gambar logo tidak terdistorsi */
+    vertical-align: middle; /* Membantu sejajarkan dengan teks/link */
+}
+
+.nav-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px; /* Jarak antar item navigasi */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #555555;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    /* Menyesuaikan tinggi baris agar sejajar */
+    line-height: 1; /* Pastikan line-height tidak terlalu tinggi */
+    padding: 5px 0; /* Memberi sedikit padding vertikal */
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #333333; /* Warna hijau saat hover atau aktif */
+    font-weight: 1000; 
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center; /* Sejajarkan ikon notifikasi dan profile-actions secara vertikal */
+    gap: 25px; /* Jarak antara ikon notifikasi dan bagian profil/logout */
+}
+
+.notification-icon {
+    font-size: 1.4rem; /* Ukuran ikon notifikasi */
+    color: #555555;
+    cursor: pointer;
+    vertical-align: middle; /* Membantu sejajarkan dengan ikon gambar */
+}
+
+.profile-actions {
+    display: flex;
+    align-items: center; /* Sejajarkan ikon user dan ikon logout secara vertikal */
+    gap: 15px; /* Jarak antara ikon user dan ikon logout */
+}
+
+/* Gaya untuk gambar ikon user/profil dan ikon logout */
+.profile-image-icon,
+.logout-image-icon {
+    height: 30px; /* Ukuran gambar ikon, sedikit lebih kecil dari logo jika diperlukan */
+    width: 30px; /* Ukuran gambar ikon */
+    border-radius: 50%; /* Membuat gambar menjadi lingkaran, jika diinginkan */
+    object-fit: cover; /* Memastikan gambar terisi penuh tanpa distorsi */
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    vertical-align: middle; /* Membantu sejajarkan */
+}
+
+.profile-image-icon:hover,
+.logout-image-icon:hover {
+    transform: scale(1.05); /* Efek hover kecil */
+}
+
+/* --- Responsiveness untuk Navbar --- */
+@media (max-width: 1024px) {
+    .navbar-left .nav-links {
+        display: none; /* Sembunyikan nav links di tablet/layar yang lebih kecil */
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 4%;
+    }
+    .logo img {
+        height: 35px;
+    }
+    .navbar-right {
+        gap: 15px;
+    }
+    .notification-icon {
+        font-size: 1.2rem;
+    }
+    .profile-image-icon,
+    .logout-image-icon {
+        height: 25px;
+        width: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-right {
+        flex-direction: row; /* Tetap horizontal untuk ikon */
+        gap: 10px;
+    }
+    .notification-icon {
+        font-size: 1rem;
+    }
+}
+
+/* --- Gaya untuk bagian-bagian lain di halaman dashboard (ini belum diaktifkan sepenuhnya) --- */
+/* (Akan ditambahkan nanti setelah header ini benar) */
+/* Jangan hapus bagian ini dari dashboard.css */
+
+/* Hero Section */
+.hero-section {
+    background-color: #3F7D58; /* Warna hijau gelap */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 5%;
+    border-radius: 45px; /* Membuat semua sudut menjadi round */
+    margin: 20px 5%; /* Memberikan sedikit margin di sisi hero section */
+    gap: 20px; /* Menambahkan jarak antar elemen di hero section */
+}
+
+.hero-content {
+    max-width: 50%;
+    text-align: left;
+    padding-top: 10px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.hero-content .hero-highlight {
+    color: inherit;
+}
+
+.hero-content .hero-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    color: #D9E5DE /* Warna putih dengan opacity 80% */
+}
+
+.btn-primary-hero {
+    display: inline-block;
+    background-color: #FFFFFF;
+    color: #3F7D58;
+    padding: 20px 30px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary-hero:hover {
+    background-color: #E0E0E0;
+    color: #3F7D58;
+}
+
+.hero-image {
+    max-width: 30%;
+    text-align: right;
+    /* Tambahan: Pastikan tidak ada masalah layout dengan flex */
+    flex-shrink: 0; /* Mencegah gambar menyusut terlalu banyak */
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    /* Penting: Ini memastikan Webpack memproses gambar yang direferensikan dalam HTML */
+    /* Meskipun ini adalah gaya, ini juga berfungsi sebagai "impor" bagi Webpack */
+    content: url('../images/plant1.png'); /* Menggunakan properti content untuk memaksa load gambar */
+}
+
+/* WHY CHOOSE AGROSENTRY? */
+.why-choose-section {
+    background-color: #F8F9FA; /* Latar belakang abu-abu muda */
+    padding: 80px 5%; /* Padding atas/bawah dan samping */
+    text-align: center;
+}
+
+.why-choose-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3F7D58;
+    margin-bottom: 60px; /* Jarak bawah judul bagian */
+}
+
+.features-grid {
+    display: flex;
+    justify-content: center; /* Pusatkan item secara horizontal */
+    gap: 70px; /* Jarak antar item fitur */
+    flex-wrap: wrap; /* Izinkan item untuk wrap ke baris baru pada layar kecil */
+}
+
+.feature-item {
+    background-color: #FFFFFF; /* Latar belakang putih untuk setiap item */
+    border-radius: 10px; /* Sudut melengkung */
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Bayangan ringan */
+    max-width: 300px; /* Lebar maksimum setiap item */
+    text-align: center;
+}
+
+.feature-item .icon {
+    font-size: 3rem; /* Ukuran ikon */
+    color: #3F7D58; /* Warna hijau ikon */
+    margin-bottom: 20px; /* Jarak bawah ikon */
+}
+
+.feature-item h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    font-size: 0.95rem;
+    color: #555555;
+    line-height: 1.5;
+}
+
+/* Responsiveness untuk bagian ini */
+@media (max-width: 768px) {
+    .why-choose-section h2 {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+    .features-grid {
+        flex-direction: column; /* Item fitur menjadi vertikal di mobile */
+        gap: 20px;
+    }
+    .feature-item {
+        max-width: 100%; /* Item mengambil lebar penuh */
+        padding: 20px;
+    }
+}
+@media (max-width: 480px) {
+    .why-choose-section {
+        padding: 40px 3%;
+    }
+}
+/* How It Works Section */
+.how-it-works-section {
+    background-color: #FFFFFF;
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.how-it-works-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3F7D58;
+    margin-bottom: 60px;
+}
+
+.steps-grid {
+    display: flex;
+    justify-content: center; /* Pusatkan item secara horizontal */
+    align-items: flex-start; /* Mengatur item dari atas */
+    gap: 40px; /* <--- UBAH: Jarak antar item langkah horizontal */
+    flex-wrap: wrap;
+}
+
+.step-item {
+    display: flex;
+    flex-direction: column; /* Nomor, gambar, dan teks secara vertikal */
+    align-items: center; /* Pusatkan konten dalam item langkah (ikon dan teks) */
+    max-width: 180px;
+    text-align: center;
+}
+
+.step-item img {
+    width: 200px; /* Ukuran gambar ikon langkah (sesuaikan) */
+    height: 100px; /* Tambah height agar proporsional */
+    object-fit: contain; /* Pastikan gambar fit tanpa terdistorsi */
+    margin-bottom: 10px; /* <--- UBAH: Jarak di bawah gambar (sebelum nomor) */
+}
+
+.step-item .step-number {
+    font-size: 1.5rem; /* <--- UBAH: Ukuran nomor langkah, sedikit lebih kecil */
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 1px; /* <--- UBAH: Jarak di bawah nomor (sebelum teks) */
+}
+
+.step-item p {
+    font-size: 0.95rem; /* Ukuran teks deskripsi */
+    color: #555555;
+    line-height: 1.4;
+}
+
+/* Responsiveness untuk bagian ini */
+@media (max-width: 1024px) {
+    .steps-grid {
+        justify-content: center;
+        gap: 20px; /* Kurangi gap di tablet */
+    }
+    .step-item img {
+        width: 70px;
+        height: 70px;
+    }
+    .step-item .step-number {
+        font-size: 1.6rem; /* Lebih kecil di tablet */
+    }
+    .step-item p {
+        font-size: 0.85rem;
+    }
+}
+@media (max-width: 768px) {
+    .how-it-works-section h2 {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+    .steps-grid {
+        flex-direction: column; /* Item langkah menjadi vertikal di mobile */
+        align-items: center;
+        gap: 20px;
+    }
+    .step-item {
+        max-width: 100%;
+    }
+    .step-item img {
+        width: 80px;
+        height: 80px;
+    }
+    .step-item .step-number {
+        font-size: 1.8rem;
+    }
+    .step-item p {
+        font-size: 0.95rem;
+    }
+}
+@media (max-width: 480px) {
+    .how-it-works-section {
+        padding: 40px 3%;
+    }
+}
+
+/* BAGIAN BARU: ABOUT US */
+.about-us-section {
+    background-color: #F8F9FA; /* Latar belakang abu-abu muda */
+    padding: 80px 5%; /* Padding atas/bawah dan samping */
+    text-align: center; /* Teks default ke tengah, nanti akan di-override untuk about-text */
+}
+
+.about-us-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3F7D58;
+    margin-bottom: 60px; /* Jarak bawah judul bagian */
+}
+
+
+.about-content {
+    display: flex;
+    justify-content: center; /* Pusatkan gambar dan teks */
+    align-items: center; /* Sejajarkan vertikal */
+    gap: 60px; /* Jarak antara gambar dan teks */
+    flex-wrap: wrap; /* Izinkan wrap pada layar kecil */
+    text-align: left; /* Teks dalam about-text akan rata kiri */
+}
+
+.about-image {
+    /* Ini adalah bagian yang paling krusial untuk menghilangkan kotak */
+    background-color: #FFFFFF; /* Pastikan tidak ada background */
+    padding: 0 ; /* Pastikan tidak ada padding */
+    border: none ; /* Pastikan tidak ada border */
+    box-shadow: none ; /* Pastikan tidak ada box-shadow pada container */
+    border-radius: 0 ;/* Pastikan tidak ada border-radius pada container */
+    display: block; /* Agar tetap berperilaku sebagai block-level element */
+    line-height: 0; /* Terkadang membantu menghilangkan spasi ekstra di bawah gambar */
+}
+
+.about-image img {
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px; /* Sudut melengkung pada gambar itu sendiri */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan gambar itu sendiri */
+    display: block; /* Penting untuk gambar */
+}
+
+
+.about-text {
+    max-width: 500px; /* Lebar maksimum area teks */
+}
+
+.about-text h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    color: #555555;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.btn-read-more {
+    background-color: #3F7D58; /* Warna hijau untuk tombol */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 115px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-read-more:hover {
+    background-color: #356D4D; /* Warna hijau lebih gelap saat hover */
+}
+
+/* --- Responsiveness untuk bagian ini --- */
+@media (max-width: 1024px) {
+    /* ... (Responsiveness untuk bagian atas) ... */
+
+    .about-content {
+        flex-direction: column; /* Gambar di atas teks di tablet */
+        gap: 30px;
+    }
+    .about-image {
+        order: -1; /* Pindahkan gambar ke atas dalam kolom flex */
+    }
+    .about-text {
+        text-align: center; /* Pusatkan teks di mobile/tablet */
+    }
+}
+
+@media (max-width: 768px) {
+    /* ... (Responsiveness untuk bagian atas) ... */
+
+    .about-us-section h2 {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+    .about-image img {
+        max-width: 100%;
+    }
+    .about-text h3 {
+        font-size: 1.6rem;
+    }
+    .about-text p {
+        font-size: 1rem;
+    }
+}
+@media (max-width: 480px) {
+    .about-us-section {
+        padding: 40px 3%;
+    }
+}
+/* BAGIAN BARU: FOOTER */
+.footer {
+    background-color: #3F7D58; /* Warna gelap untuk footer */
+    color: white;
+    padding: 60px 5%; /* Padding atas/bawah dan samping */
+    text-align: left; /* Teks default rata kiri */
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between; /* Menyebar kolom secara merata */
+    flex-wrap: wrap; /* Izinkan wrap pada layar kecil */
+    gap: 40px; /* Jarak antar kolom */
+    margin-bottom: 40px; /* Jarak antara bagian atas footer dan bagian bawah */
+}
+
+.footer-column {
+    flex: 1; /* Setiap kolom akan mencoba mengambil ruang yang sama */
+    min-width: 180px; /* Lebar minimum untuk setiap kolom agar tidak terlalu kecil */
+}
+
+.footer-column h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: white; /* Pastikan judul kolom berwarna putih */
+}
+
+.footer-column p {
+    font-size: 1rem;
+    color: #CCCCCC; /* Warna teks lebih terang untuk kontak */
+}
+
+.footer-column ul {
+    list-style: none; /* Hapus bullet point default */
+    margin: 0;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px; /* Jarak antar item daftar */
+}
+
+.footer-column ul li a {
+    text-decoration: none; /* Hapus garis bawah link */
+    color: #CCCCCC; /* Warna link lebih terang */
+    font-size: 1rem;
+    transition: color 0.3s ease; /* Efek transisi saat hover */
+}
+
+.footer-column ul li a:hover {
+    color: #3F7D58; /* Warna hijau saat hover */
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Garis pemisah di atas teks hak cipta */
+    padding-top: 20px; /* Padding di atas teks hak cipta */
+    text-align: center; /* Pusatkan teks hak cipta */
+    font-size: 0.9rem;
+    color: #B2CBBC; /* Warna teks hak cipta yang lebih terang */
+}
+
+/* --- Responsiveness untuk bagian footer --- */
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 4%; /* Sesuaikan padding di mobile */
+    }
+    .footer-top {
+        flex-direction: column; /* Kolom footer menjadi vertikal di mobile */
+        gap: 30px;
+    }
+    .footer-column {
+        text-align: center; /* Pusatkan teks kolom di mobile */
+    }
+    .footer-column h4 {
+        margin-top: 20px; /* Tambah jarak atas antar judul kolom di mobile */
+    }
+}
+@media (max-width: 480px) {
+    .footer {
+        padding: 30px 3%;
+    }
+}
+/* Gaya baru untuk ikon history */
+.history-icon {
+    height: 30px; /* Ukuran ikon history, sesuaikan agar cocok dengan user/logout */
+    width: 30px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    vertical-align: middle;
+}
+
+.history-icon:hover {
+    transform: scale(1.05);
+}

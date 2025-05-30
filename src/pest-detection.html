@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroSentry - Pest Detection</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/pest-detection.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+    <header class="navbar pest-detection-navbar">
+        <div class="navbar-left">
+            <div class="logo">
+                <img src="images/logo-agrosentry.png" alt="AgroSentry Logo">
+            </div>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="dashboard.html">HOME</a></li>
+                    <li><a href="pest-detection.html" class="active">PEST DETECTION</a></li>
+                    <li><a href="about-us.html">ABOUT US</a></li> <li><a href="#">HELP</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="navbar-right">
+            <div class="profile-actions">
+                <img src="images/history.png" alt="History Icon" class="history-icon">
+                <img src="images/user.png" alt="User Profile" class="profile-image-icon">
+                <img src="images/logout.png" alt="Logout" class="logout-image-icon">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="pest-detection-hero">
+            <div class="hero-title-wrapper">
+                <h1>Search any image with Agrosentry Lens</h1>
+                <img src="images/history.png" alt="History Icon" class="hero-history-icon">
+            </div>
+            <div class="upload-area">
+                <input type="file" id="imageUpload" accept="image/*" hidden>
+                <label for="imageUpload" class="upload-button-new">
+                    <img src="images/image.png" alt="Upload Icon" class="upload-image-icon">
+                    <span class="upload-text-link">Upload image here</span>
+                </label>
+                <div id="imagePreview" class="image-preview">
+                    <img src="#" alt="Image Preview" class="hidden">
+                </div>
+                <button class="btn-primary-detection hidden" id="detectPestBtn">Detect Pest</button>
+            </div>
+        </section>
+
+        <section class="detection-results hidden">
+            <h2>Detection Results</h2>
+            <div class="result-box">
+                <h3>Pest Type: <span id="pestType"></span></h3>
+                <p>Severity Level: <span id="severityLevel"></span></p>
+                <p>Detail Information: <span id="pestDescription"></span></p>
+                <h4>Treatment Recommendation:</h4>
+                <p id="pestSolution"></p>
+            </div>
+        </section>
+
+        <section class="pest-detection-features-showcase-section">
+            <div class="features-showcase-grid">
+
+                <div class="feature-showcase-row">
+                    <div class="feature-image-col">
+                        <img src="images/pest1.png" alt="Identify plant disease">
+                    </div>
+                    <div class="feature-text-col">
+                        <h3>Automatic Detection</h3>
+                        <p>Quickly identify pest types by simply uploading an image — no manual checking needed.</p>
+                    </div>
+                </div>
+
+                <div class="feature-showcase-row reverse-layout">
+                    <div class="feature-image-col">
+                        <img src="images/pest2.png" alt="Accurate diagnosis">
+                    </div>
+                    <div class="feature-text-col">
+                        <h3>Modern AI Technology</h3>
+                        <p>Powered by deep learning and computer vision to deliver accurate and reliable results.</p>
+                    </div>
+                </div>
+
+                <div class="feature-showcase-row">
+                    <div class="feature-image-col">
+                        <img src="images/pest3.png" alt="Solution recommendations">
+                    </div>
+                    <div class="feature-text-col">
+                        <h3>Instant Suggestions</h3>
+                        <p>Receive direct advice on how to treat the identified pest, helping you act faster in the field.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-column contact-us">
+                <h4>Contact Us</h4>
+                <p>info@agrosentry.com</p>
+            </div>
+            <div class="footer-column menu">
+                <h4>Menu</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Pest Detection</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Register</a></li>
+                </ul>
+            </div>
+            <div class="footer-column help">
+                <h4>Help</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">User Guide</a></li>
+                    <li><a href="#">Contact Support</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Agrosentry. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/pest-detection-script.js"></script>
+</body>
+</html>
